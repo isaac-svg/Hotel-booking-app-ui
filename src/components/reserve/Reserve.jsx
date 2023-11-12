@@ -55,7 +55,7 @@ const Reserve = ({ setOpen, hotelId }) => {
   const handleClick = async () => {
     try {
       await Promise.all(
-        selectedRooms.map((roomId) => {
+        selectedRooms?.map((roomId) => {
           const res = api.put(`/rooms/availability/${roomId}`, {
             dates: alldates,
           });
@@ -75,7 +75,7 @@ const Reserve = ({ setOpen, hotelId }) => {
           onClick={() => setOpen(false)}
         />
         <span>Select your rooms:</span>
-        {data.map((item) => (
+        {data?.map((item) => (
           <div className="rItem" key={item._id}>
             <div className="rItemInfo">
               <div className="rTitle">{item.title}</div>
@@ -86,7 +86,7 @@ const Reserve = ({ setOpen, hotelId }) => {
               <div className="rPrice">{item.price}</div>
             </div>
             <div className="rSelectRooms">
-              {item.roomNumbers.map((roomNumber) => (
+              {item?.roomNumbers?.map((roomNumber) => (
                 <div className="room">
                   <label>{roomNumber.number}</label>
                   <input

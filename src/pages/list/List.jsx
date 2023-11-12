@@ -110,7 +110,7 @@ console.log(data)
               "loading"
             ) : (
               <>
-                {data.map((item) => (
+                {data?.map((item) => (
                   <SearchItem item={item} key={item._id} />
                 ))}
               </>
