@@ -5,11 +5,11 @@ const PropertyList = () => {
   let { data, loading, error } = useFetch("/hotels/countByType");
 // console.log(data, "data")
   const images = [
-    "https://cf.bstatic.com/xdata/images/xphoto/square300/57584488.webp?k=bf724e4e9b9b75480bbe7fc675460a089ba6414fe4693b83ea3fdd8e938832a6&o=",
-    "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-apartments_300/9f60235dc09a3ac3f0a93adbc901c61ecd1ce72e.jpg",
-    "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/bg_resorts/6f87c6143fbd51a0bb5d15ca3b9cf84211ab0884.jpg",
-    "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-villas_300/dd0d7f8202676306a661aa4f0cf1ffab31286211.jpg",
-    "https://cf.bstatic.com/static/img/theme-index/carousel_320x240/card-image-chalet_300/8ee014fcc493cb3334e25893a1dee8c6d36ed0ba.jpg",
+    "https://images.unsplash.com/photo-1560703649-e3055f28bcf8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzB8fGhvdGVscyUyMGFuZCUyMHJlc29ydHN8ZW58MHx8MHx8fDA%3D",
+    "https://media.istockphoto.com/id/1447180306/photo/woman-enjoys-magnificent-view-from-hotel-window.webp?b=1&s=170667a&w=0&k=20&c=xlVEMpQzq6pO48dZnCVHEEZdLB-Z60_JGuKUCcoCSx0=",
+    "https://images.unsplash.com/photo-1675870191236-9f1770235165?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODJ8fGhvdGVscyUyMGFuZCUyMHJlc29ydHN8ZW58MHx8MHx8fDA%3D",
+    "https://images.unsplash.com/photo-1694267900696-0d8b1cff6728?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE4fHxob3RlbHMlMjBhbmQlMjByZXNvcnRzfGVufDB8fDB8fHww",
+    "https://images.unsplash.com/photo-1689605542182-b8381201b969?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE5fHxob3RlbHMlMjBhbmQlMjByZXNvcnRzfGVufDB8fDB8fHww",
   ];
   return (
     <div className="pList">

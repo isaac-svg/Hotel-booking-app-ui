@@ -19,7 +19,7 @@ import Reserve from "../../components/reserve/Reserve";
 
 const Hotel = () => {
   const location = useLocation();
-  console.log(location)
+  console.log(location, "location")
   const id = location.pathname.split("/")[2];
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
@@ -30,15 +30,15 @@ const Hotel = () => {
   const navigate = useNavigate();
 
   const { dates, options } = useContext(SearchContext);
-
+console.log(dates,"dates", options, "options")
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
   function dayDifference(date1, date2) {
-    const timeDiff = Math.abs(date2.getTime() - date1.getTime());
+    const timeDiff = Math.abs(date2?.getTime() ?? 1 - date1?.getTime() ?? 2);
     const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
     return diffDays;
   }
 
-  const days = dayDifference(dates[0].endDate, dates[0].startDate);
+  const days = dayDifference(dates?.[0]?.endDate, dates?.[0]?.startDate) ?? 2;
 
   const handleOpen = (i) => {
     setSlideNumber(i);
@@ -49,9 +49,9 @@ const Hotel = () => {
     let newSlideNumber;
 
     if (direction === "l") {
-      newSlideNumber = slideNumber === 0 ? 5 : slideNumber - 1;
+      newSlideNumber = slideNumber === 0 ? data?.photos?.length-1 : slideNumber - 1;
     } else {
-      newSlideNumber = slideNumber === 5 ? 0 : slideNumber + 1;
+      newSlideNumber = slideNumber === data?.photos?.length-1 ? 0 : slideNumber + 1;
     }
 
     setSlideNumber(newSlideNumber);
