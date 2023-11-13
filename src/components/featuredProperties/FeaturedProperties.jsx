@@ -10,7 +10,7 @@ console.log(data)
         "Loading"
       ) : (
         <>
-          {data && (data?.map((item) => (
+          {data?.map((item) => (
             <div className="fpItem" key={item._id}>
               <img
                 src={item.photos[0]}
@@ -25,7 +25,7 @@ console.log(data)
                 <span>Excellent</span>
               </div>}
             </div>
-          )))}
+          ))}
         </>
       )}
     </div>
