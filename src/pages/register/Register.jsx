@@ -2,13 +2,16 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import "./login.css";
+import "../login/login.css";
 import { api } from "../../lip/fetch-config";
 
-const Login = () => {
+const Register = () => {
   const [credentials, setCredentials] = useState({
     username: undefined,
     password: undefined,
+    email:undefined,
+    phone:undefined,
+    city:undefined
   });
 
   const { loading, error, dispatch } = useContext(AuthContext);
@@ -23,7 +26,7 @@ const Login = () => {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await api.post("/api/auth/login", credentials);
+      const res = await api.post("/api/auth/register", credentials);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
       navigate("/")
     } catch (err) {
@@ -43,6 +46,34 @@ const Login = () => {
           className="lInput"
         />
         <input
+          type="email"
+          placeholder="email"
+          id="email"
+          onChange={handleChange}
+          className="lInput"
+        />
+         <input
+          type="text"
+          placeholder="city"
+          id="city"
+          onChange={handleChange}
+          className="lInput"
+        />
+         <input
+          type="text"
+          placeholder="phone: +233 591 514 584"
+          id="phone"
+          onChange={handleChange}
+          className="lInput"
+        />
+         <input
+          type="text"
+          placeholder="eg. Ghana"
+          id="country"
+          onChange={handleChange}
+          className="lInput"
+        />
+         <input
           type="password"
           placeholder="password"
           id="password"
@@ -50,7 +81,7 @@ const Login = () => {
           className="lInput"
         />
         <button disabled={loading} onClick={handleClick} className="lButton">
-          Login
+          Register
         </button>
         {error && <span>{error.message}</span>}
       </div>
@@ -58,4 +89,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
