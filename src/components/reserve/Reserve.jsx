@@ -11,7 +11,7 @@ import { api } from "../../lip/fetch-config";
 
 const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
-  const { data, loading, error } = useFetch(`/hotels/room/${hotelId}`);
+  const { data, loading, error } = useFetch(`/api/hotels/room/${hotelId}`);
   const { dates } = useContext(SearchContext);
 
   const getDatesInRange = (startDate, endDate) => {

@@ -19,7 +19,7 @@ const List = () => {
   const destRef = useRef()
   
   const { data, loading, error, reFetch } = useFetch(
-    `/hotels?city=${destination}&min=${min || 0 }&max=${max || 999}`
+    `/api/hotels?city=${destination}&min=${min || 0 }&max=${max || 999}`
   );
   console.log(`/hotels?city=${destination}&min=${min || 0 }&max=${max || 999}`)
 
